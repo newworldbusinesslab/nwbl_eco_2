@@ -1,0 +1,12 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/accessibility/page": "app/accessibility/page.js",
+  "/builds/ai-k9-chime/page": "app/builds/ai-k9-chime/page.js",
+  "/disclaimer/page": "app/disclaimer/page.js",
+  "/engines/knowledge-forge/page": "app/engines/knowledge-forge/page.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/services/compliance-giants/page": "app/services/compliance-giants/page.js",
+  "/terms/page": "app/terms/page.js"
+}

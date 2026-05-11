@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/builds/layout,_N_T_/builds/ai-k9-chime/layout,_N_T_/builds/ai-k9-chime/page,_N_T_/builds/ai-k9-chime"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/builds/ai-k9-chime/__PAGE__",
+    "/builds/ai-k9-chime",
+    "/builds",
+    "/_index",
+    "/_head"
+  ]
+}

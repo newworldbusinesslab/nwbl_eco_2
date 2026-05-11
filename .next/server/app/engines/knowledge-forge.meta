@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/engines/layout,_N_T_/engines/knowledge-forge/layout,_N_T_/engines/knowledge-forge/page,_N_T_/engines/knowledge-forge"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/engines/knowledge-forge/__PAGE__",
+    "/engines/knowledge-forge",
+    "/engines",
+    "/_index",
+    "/_head"
+  ]
+}
