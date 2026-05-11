@@ -1,0 +1,34 @@
+
+> new-world-business-lab-ecosystem@0.1.0 build
+> next build --webpack
+
+  Skipping creating a lockfile at /data/data/com.termux/files/home/nwbl_eco_2/.next/lock because we're using WASM bindings
+▲ Next.js 16.2.6 (webpack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 9.3s
+  Running TypeScript ...
+  Finished TypeScript in 8.0s ...
+  Collecting page data using 1 worker ...
+  Generating static pages using 1 worker (0/10) ...
+  Generating static pages using 1 worker (2/10) 
+  Generating static pages using 1 worker (4/10) 
+  Generating static pages using 1 worker (7/10) 
+✓ Generating static pages using 1 worker (10/10) in 1372ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /accessibility
+├ ○ /builds/ai-k9-chime
+├ ○ /disclaimer
+├ ○ /engines/knowledge-forge
+├ ○ /privacy
+├ ○ /services/compliance-giants
+└ ○ /terms
+
+
+○  (Static)  prerendered as static content
+
