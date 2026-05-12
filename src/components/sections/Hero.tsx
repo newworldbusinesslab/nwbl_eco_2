@@ -7,6 +7,12 @@ export function Hero() {
       className="relative overflow-hidden px-6 py-24 sm:py-32"
       aria-labelledby="hero-heading"
     >
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/hero/landing-opening.webp')" }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-zinc-950/70" aria-hidden="true" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_32%),radial-gradient(circle_at_70%_20%,rgba(167,139,250,0.14),transparent_28%),linear-gradient(180deg,rgba(9,9,11,0.4),rgba(9,9,11,1))]" />
       <div
         className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.7)_1px,transparent_1px)] [background-size:44px_44px]"
@@ -51,14 +57,14 @@ export function Hero() {
           </a>
 
           <a
-            href="#agent-pipeline-heading"
+            href="#lab-walkthrough"
             className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:border-white/30 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
           >
-            View Build Pipeline
+            Enter the Lab
           </a>
         </div>
 
-        <div className="mx-auto mt-14 max-w-4xl">
+        <div id="lab-walkthrough" className="mx-auto mt-14 max-w-4xl">
           <HeroVisual />
         </div>
       </div>
