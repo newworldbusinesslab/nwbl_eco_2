@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { VisualAssetFrame } from "@/components/visuals/VisualAssetFrame";
 
