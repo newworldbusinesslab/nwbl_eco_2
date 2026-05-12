@@ -8,7 +8,7 @@ export function Hero() {
       aria-labelledby="hero-heading"
     >
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/hero/landing-opening.webp')" }}
         aria-hidden="true"
       />
