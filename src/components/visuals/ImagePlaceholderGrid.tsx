@@ -16,7 +16,7 @@ export function ImagePlaceholderGrid() {
             Imagery architecture reserved.
           </h2>
           <p className="mt-4 text-base leading-7 text-zinc-300 md:text-lg">
-            The spine includes placeholder slots for the logo, hero scene, robot guide, module art, service visuals, diagrams, animation stills, and future page imagery.
+            The spine includes image slots for the logo, hero scene, robot guide, module art, service visuals, diagrams, animation stills, and future page imagery.
           </p>
         </div>
 
@@ -27,12 +27,19 @@ export function ImagePlaceholderGrid() {
               label={slot.label}
               description={slot.description}
             >
-              <div className="mt-5 rounded-2xl border border-dashed border-cyan-300/25 bg-black/30 p-4">
-                <p className="font-mono text-xs text-cyan-200">{slot.assetPath}</p>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">
-                  {slot.intendedUse}
-                </p>
-              </div>
+              <figure className="mt-5 overflow-hidden rounded-2xl border border-cyan-300/20 bg-black/35 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
+                <img
+                  src={slot.assetPath}
+                  alt={slot.label}
+                  loading="lazy"
+                  className="aspect-video w-full object-cover"
+                />
+                <figcaption className="border-t border-white/10 px-4 py-3">
+                  <p className="text-sm leading-6 text-zinc-400">
+                    {slot.intendedUse}
+                  </p>
+                </figcaption>
+              </figure>
             </VisualAssetFrame>
           ))}
         </div>
