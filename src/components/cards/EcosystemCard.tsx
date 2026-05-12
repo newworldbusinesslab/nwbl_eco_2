@@ -103,15 +103,19 @@ export function EcosystemCard({ card }: { card: EcosystemCardType }) {
       </div>
 
       {visualSlot ? (
-        <div className="mb-5 rounded-2xl border border-dashed border-cyan-300/20 bg-black/25 p-4">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-cyan-300">
-            Visual Slot
-          </p>
-          <p className="mt-2 text-sm font-medium text-white">{visualSlot.label}</p>
-          <p className="mt-1 font-mono text-[11px] text-cyan-200/80">
-            {visualSlot.assetPath}
-          </p>
-        </div>
+        <figure className="mb-5 overflow-hidden rounded-2xl border border-cyan-300/20 bg-black/35 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
+          <img
+            src={visualSlot.assetPath}
+            alt={visualSlot.label}
+            loading="lazy"
+            className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+          />
+          <figcaption className="border-t border-white/10 px-4 py-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-cyan-300">
+              {visualSlot.label}
+            </p>
+          </figcaption>
+        </figure>
       ) : null}
 
       <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
