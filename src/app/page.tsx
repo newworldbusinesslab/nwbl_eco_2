@@ -6,7 +6,6 @@ import { EcosystemGroup } from "@/components/sections/EcosystemGroup";
 import { AgentPipeline } from "@/components/sections/AgentPipeline";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Footer } from "@/components/layout/Footer";
-import { ImagePlaceholderGrid } from "@/components/visuals/ImagePlaceholderGrid";
 import { RobotGuidePlaceholder } from "@/components/visuals/RobotGuidePlaceholder";
 
 export default function HomePage() {
@@ -18,19 +17,15 @@ export default function HomePage() {
       >
         Skip to ecosystem content
       </a>
-
       <Hero />
       <WhatNwblDoes />
       <SpineSummary />
-
       <div id="ecosystem" className="mx-auto max-w-7xl px-6">
         {cardGroups.map((group) => (
           <EcosystemGroup key={group.id} group={group} />
         ))}
         <AgentPipeline />
       </div>
-
-      <ImagePlaceholderGrid />
       <FinalCta />
       <Footer />
       <RobotGuidePlaceholder />
