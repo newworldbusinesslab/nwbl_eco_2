@@ -39,6 +39,7 @@ export const cardGroups: EcosystemGroup[] = [
         route: "/intake",
         visibility: "future",
         visualTier: "standard",
+        visualSlotId: "founder-intake-visual",
         description:
           "The first conversation layer for founders, creators, vendors, artists, nonprofits, and small businesses entering New World Business Lab.",
         highlights: [
@@ -152,6 +153,7 @@ export const cardGroups: EcosystemGroup[] = [
         route: "/engines/web-forge",
         visibility: "future",
         visualTier: "standard",
+        visualSlotId: "web-forge-visual",
         description:
           "The website and app creation layer that helps founders build modern digital presence, product interfaces, prototypes, and launch-ready online infrastructure.",
         highlights: [
@@ -171,6 +173,7 @@ export const cardGroups: EcosystemGroup[] = [
         route: "/engines/investor-path",
         visibility: "future",
         visualTier: "standard",
+        visualSlotId: "investor-path-visual",
         description:
           "The investor-preparation system that helps projects develop pitch materials, funding strategy, proof assets, traction narratives, and investor-facing clarity.",
         highlights: [
