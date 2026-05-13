@@ -1,0 +1,62 @@
+name: NWBL Eyes Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "URL to screenshot, usually the Vercel preview or production URL"
+        required: true
+        type: string
+  deployment_status:
+  repository_dispatch:
+    types:
+      - vercel.deployment.success
+
+jobs:
+  screenshot-site:
+    name: Capture website screenshots
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'repository_dispatch' ||
+      (github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success')
+    runs-on: ubuntu-latest
+
+    env:
+      BASE_URL: ${{ github.event.client_payload.url || github.event.deployment_status.target_url || github.event.deployment_status.environment_url || inputs.base_url }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install project dependencies
+        run: npm ci
+
+      - name: Install Playwright for this run
+        run: |
+          npm install --no-save @playwright/test
+          npx playwright install --with-deps chromium
+
+      - name: Validate target URL
+        run: |
+          if [ -z "$BASE_URL" ]; then
+            echo "BASE_URL is empty. Use workflow_dispatch with base_url or trigger from Vercel deployment event."
+            exit 1
+          fi
+          echo "NWBL Eyes Agent target: $BASE_URL"
+
+      - name: Capture visual QA screenshots
+        run: npx playwright test tests/nwbl-eyes-agent.spec.ts
+
+      - name: Upload screenshot report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nwbl-eyes-agent-screenshots
+          path: screenshots/
+          if-no-files-found: warn
