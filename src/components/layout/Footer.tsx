@@ -7,6 +7,8 @@ export function Footer() {
         className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs"
         aria-label="Footer navigation"
       >
+        <a className="hover:text-cyan-200" href="/guide">Ask Puka</a>
+        <a className="hover:text-cyan-200" href="https://nwbl.kapuai.chatgpt.site/ecosystem/">Founder resources</a>
         <a className="hover:text-cyan-200" href="/privacy">
           Privacy
         </a>

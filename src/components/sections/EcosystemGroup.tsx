@@ -28,8 +28,8 @@ export function EcosystemGroup({ group }: { group: EcosystemGroupType }) {
         description={group.description}
       />
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {group.cards.map((card) => (
-          <EcosystemCard key={card.name} card={card} />
+        {group.cards.filter(card => card.visibility !== "internal").map((card) => (
+          <EcosystemCard key={card.id} card={card} />
         ))}
       </div>
     </section>

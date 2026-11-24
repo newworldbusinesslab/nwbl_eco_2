@@ -37,3 +37,6 @@ a {
     animation-iteration-count: 1 !important;
   }
 }
+
+:focus-visible { outline: 3px solid #67e8f9; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .tour-play { display: none; } }

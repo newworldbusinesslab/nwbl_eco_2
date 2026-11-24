@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GuideLauncher } from "@/components/guide/GuideLauncher";
+import { tourStops } from "@/lib/guide-directory";
 
 export const metadata: Metadata = {
   title: "New World Business Lab",
@@ -14,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>{children}<GuideLauncher stops={tourStops} /></body>
     </html>
   );
 }
