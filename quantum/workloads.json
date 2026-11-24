@@ -1,0 +1,8 @@
+{
+  "bell-pair": {
+    "name": "Bell pair",
+    "defaultShots": 128,
+    "maxShots": 4096,
+    "description": "Prepare two qubits together and measure them. An ideal circuit returns matching bits, 00 or 11, with equal probability."
+  }
+}

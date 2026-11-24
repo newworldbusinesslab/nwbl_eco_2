@@ -1,3 +1,4 @@
+import { intakeUrl } from "@/data/ecosystemCards";
 import { Zap } from "lucide-react";
 
 export function FinalCta() {
@@ -11,13 +12,12 @@ export function FinalCta() {
           id="next-step-heading"
           className="text-3xl font-semibold text-white md:text-5xl"
         >
-          Ready for the agent gauntlet.
+          What do you want to build?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-300">
-          This v2 spine has passed ANCHOR-13, GLASSFORGE, SHIPRIGHT, VANTA-9,
-          ECHO-VOW, ADA-SENTINEL, Gemini audit, CODEX-BRIDGE packaging, and is
-          ready for final Puka Prime sign-off.
+          Bring a skill, a customer problem, or a rough idea. Founder intake is the first conversation about who it could help and how to test it.
         </p>
+        <a className="mt-5 inline-block rounded-xl bg-cyan-300 px-5 py-3 font-semibold text-zinc-950" href={intakeUrl}>Start founder intake</a>
       </div>
     </section>
   );

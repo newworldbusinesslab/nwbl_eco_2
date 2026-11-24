@@ -8,10 +8,10 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "eyes": "playwright test tests/nwbl-eyes-agent.spec.ts"
+    "eyes": "playwright test tests/nwbl-eyes-agent.spec.ts",
+    "test:lab": "playwright test tests/lab.spec.tsx --workers=1"
   },
   "dependencies": {
-    "framer-motion": "^12.0.0",
     "lucide-react": "^0.468.0",
     "next": "^16.2.6",
     "react": "^19.0.0",

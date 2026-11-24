@@ -1,4 +1,5 @@
 import { cardGroups } from "@/data/ecosystemCards";
+import { FieldLearning } from "@/components/sections/FieldLearning";
 import { Hero } from "@/components/sections/Hero";
 import { SpineSummary } from "@/components/sections/SpineSummary";
 import { WhatNwblDoes } from "@/components/sections/WhatNwblDoes";
@@ -6,7 +7,6 @@ import { EcosystemGroup } from "@/components/sections/EcosystemGroup";
 import { AgentPipeline } from "@/components/sections/AgentPipeline";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Footer } from "@/components/layout/Footer";
-import { RobotGuidePlaceholder } from "@/components/visuals/RobotGuidePlaceholder";
 
 export default function HomePage() {
   return (
@@ -26,9 +26,9 @@ export default function HomePage() {
         ))}
         <AgentPipeline />
       </div>
+      <FieldLearning />
       <FinalCta />
       <Footer />
-      <RobotGuidePlaceholder />
     </main>
   );
 }

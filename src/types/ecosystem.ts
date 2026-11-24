@@ -49,6 +49,8 @@ export type InternalPipeline = {
 };
 
 export type EcosystemCard = {
+  id: string;
+  website?: string;
   name: string;
   status: string;
   badgeType: BadgeType;
@@ -104,10 +106,12 @@ export type BadgeProps = {
   children: React.ReactNode;
 };
 
-export type VisualSlot = {
+export type VideoSource = { src: string; type: "video/webm" | "video/mp4" };
+export type MediaAsset = { assetPath: string; video?: VideoSource[]; captions?: string };
+
+export type VisualSlot = MediaAsset & {
   id: string;
   label: string;
   description: string;
-  assetPath: string;
   intendedUse: string;
 };

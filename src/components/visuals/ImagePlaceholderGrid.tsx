@@ -1,3 +1,4 @@
+import { LabMedia } from "./LabMedia";
 import { visualSlots } from "@/data/visualSlots";
 import { VisualAssetFrame } from "@/components/visuals/VisualAssetFrame";
 
@@ -28,10 +29,9 @@ export function ImagePlaceholderGrid() {
               description={slot.description}
             >
               <figure className="mt-5 overflow-hidden rounded-2xl border border-cyan-300/20 bg-black/35 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
-                <img
-                  src={slot.assetPath}
+                <LabMedia
+                  asset={slot}
                   alt={slot.label}
-                  loading="lazy"
                   className="aspect-video w-full object-cover"
                 />
                 <figcaption className="border-t border-white/10 px-4 py-3">

@@ -128,3 +128,5 @@ export const visualSlots: VisualSlot[] = [
     intendedUse: "Animation fallback, reduced-motion mode, and initial homepage visual system."
   }
 ];
+
+export const visualSlotsById = new Map(visualSlots.map(slot => [slot.id, slot]));

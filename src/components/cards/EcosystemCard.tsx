@@ -1,6 +1,4 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
+import { LabMedia } from "@/components/visuals/LabMedia";
 import {
   Brain,
   Hammer,
@@ -23,7 +21,7 @@ import {
   BadgeCheck,
 } from "lucide-react";
 import { Badge } from "@/components/cards/Badge";
-import { visualSlots } from "@/data/visualSlots";
+import { visualSlotsById } from "@/data/visualSlots";
 import type {
   EcosystemCard as EcosystemCardType,
   IconName,
@@ -59,14 +57,8 @@ const visualTierStyles: Record<string, string> = {
   future: "opacity-95",
 };
 
-function getVisualSlot(visualSlotId?: string) {
-  if (!visualSlotId) return undefined;
-  return visualSlots.find((slot) => slot.id === visualSlotId);
-}
-
 export function EcosystemCard({ card }: { card: EcosystemCardType }) {
   const Icon = iconMap[card.icon] || Sparkles;
-  const prefersReducedMotion = useReducedMotion();
   const isActive = card.visibility === "public" && Boolean(card.route);
   const visibleHighlights = card.highlights?.slice(0, 4) || [];
   const hiddenHighlightCount = Math.max(
@@ -74,15 +66,11 @@ export function EcosystemCard({ card }: { card: EcosystemCardType }) {
     0
   );
   const tierStyle = card.visualTier ? visualTierStyles[card.visualTier] : "";
-  const visualSlot = getVisualSlot(card.visualSlotId);
+  const visualSlot = card.visualSlotId ? visualSlotsById.get(card.visualSlotId) : undefined;
 
   return (
-    <motion.article
-      initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
-      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.45 }}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-2xl shadow-black/30 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.055] ${tierStyle}`}
+    <article id={card.id}
+      className={`group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-6 shadow-2xl shadow-black/30 backdrop-blur-xl transition duration-300 motion-safe:hover:-translate-y-1 hover:border-cyan-300/40 hover:bg-white/[0.055] ${tierStyle}`}
     >
       <div
         className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent opacity-0 transition group-hover:opacity-100"
@@ -104,11 +92,10 @@ export function EcosystemCard({ card }: { card: EcosystemCardType }) {
 
       {visualSlot ? (
         <figure className="mb-5 overflow-hidden rounded-2xl border border-cyan-300/20 bg-black/35 shadow-[0_0_30px_rgba(34,211,238,0.08)]">
-          <img
-            src={visualSlot.assetPath}
+          <LabMedia
+            asset={visualSlot}
             alt={visualSlot.label}
-            loading="lazy"
-            className="aspect-video w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+            className="aspect-video w-full object-cover transition duration-500 motion-safe:group-hover:scale-[1.03]"
           />
           <figcaption className="border-t border-white/10 px-4 py-3">
             <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-cyan-300">
@@ -196,6 +183,6 @@ export function EcosystemCard({ card }: { card: EcosystemCardType }) {
           </span>
         </div>
       )}
-    </motion.article>
+    </article>
   );
 }

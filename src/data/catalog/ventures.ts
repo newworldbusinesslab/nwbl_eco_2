@@ -1,0 +1,45 @@
+import type { EcosystemGroup } from "@/types/ecosystem";
+
+export const ventures: EcosystemGroup = {
+  id: "proof-ventures",
+  label: "Proof-of-concept ventures",
+  eyebrow: "Businesses built through the Lab",
+  description: "These independent businesses put the NWBL model to work. Each serves its own customers and brings lessons back to the Lab.",
+  accent: "proof",
+  cards: [
+    {
+      id: "front-street",
+      name: "Front Street",
+      category: "Digital remedies for storefront businesses",
+      status: "Proof-of-concept venture",
+      badgeType: "core",
+      icon: "Store",
+      visibility: "public",
+      route: "/ventures/front-street",
+      website: "https://front-street.kapuai.chatgpt.site",
+      cta: "Explore Front Street",
+      visualSlotId: "web-forge-visual",
+      description: "Front Street helps local businesses turn a digital audit into a focused remedy. The work starts with how customers find, contact, and return to a storefront.",
+      highlights: ["Storefront audits", "Customer acquisition and retention", "Digital remedies", "Follow-up and measurement"],
+    },
+    {
+      id: "soul-forge-studio",
+      name: "Soul Forge Studio",
+      category: "Story, music, and creative production",
+      status: "Proof-of-concept venture",
+      badgeType: "core",
+      icon: "Music",
+      visibility: "public",
+      route: "/ventures/soul-forge-studio",
+      website: "https://soulforge.kapuai.chatgpt.site",
+      cta: "Explore Soul Forge Studio",
+      internalPipeline: {
+        visibility: "internal", connectedEngine: "Knowledge Forge",
+        purpose: "Route interested, qualified creators from story intake to founder discovery when appropriate.",
+      },
+      visualSlotId: "soul-forge-studio-visual",
+      description: "Soul Forge Studio begins with a person's story. A song can be the first piece. Comics, video, albums, and books grow from material the client approves.",
+      highlights: ["Story intake", "Story to song", "Client review and approval", "Creative production"],
+    },
+  ],
+};
